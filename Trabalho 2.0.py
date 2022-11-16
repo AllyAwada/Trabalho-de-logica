@@ -8,69 +8,27 @@ jogar = input('Para começar digite "S"')
 pc = 0
 user = 0
 
-def sorteio_facil():
-     num1 = random.randint(1,10)
-     num2 = random.randint(1,10)
-     num3 = random.randint(1,10)
-     num4 = random.randint(1,10)
-     num5 = random.randint(1,10)
+def sorteio(Numeros):
+     num1 = random.randint(1,Numeros)
+     num2 = random.randint(1,Numeros)
+     num3 = random.randint(1,Numeros)
+     num4 = random.randint(1,Numeros)
+     num5 = random.randint(1,Numeros)
      while num1>0:
           if num1 == num2 or num1 == num3 or num1 == num4 or num1 == num5:
-               num1 = random.randint(1,10)
+               num1 = random.randint(1,Numeros)
           elif num2 == num1 or num2 == num3 or num2 == num4 or num2 == num5:
-               num2 = random.randint(1,10)
+               num2 = random.randint(1,Numeros)
           elif num3 == num1 or num3 == num2 or num3 == num4 or num3 == num5:
-               num3 = random.randint(1,10)
+               num3 = random.randint(1,Numeros)
           elif num4 == num1 or num4 == num2 or num4 == num3 or num4 == num5:
-               num4 = random.randint(1,10)
+               num4 = random.randint(1,Numeros)
           elif num5 == num1 or num5 == num2 or num5 == num3 or num5 == num4:
-               num5 = random.randint(1,10)
+               num5 = random.randint(1,Numeros)
           elif num1 != num2 and num1 != num3 and num1 != num4 and num1 != num5 and num2 != num1 and num2 != num3 and num2 != num4 and num2 != num5 and num3 != num1 and num3 != num2 and num3 != num4 and num3 != num5 and num4 != num1 and num4 != num2 and num4 != num3 and num4 != num5:
                break
      return num1,num2,num3,num4,num5
 
-
-def sorteio_medio():
-     num1 = random.randint(1,50)
-     num2 = random.randint(1,50)
-     num3 = random.randint(1,50)
-     num4 = random.randint(1,50)
-     num5 = random.randint(1,50)
-     while num1>0:
-          if num1 == num2 or num1 == num3 or num1 == num4 or num1 == num5:
-               num1 = random.randint(1,50)
-          elif num2 == num1 or num2 == num3 or num2 == num4 or num2 == num5:
-               num2 = random.randint(1,50)
-          elif num3 == num1 or num3 == num2 or num3 == num4 or num3 == num5:
-               num3 = random.randint(1,50)
-          elif num4 == num1 or num4 == num2 or num4 == num3 or num4 == num5:
-               num4 = random.randint(1,50)
-          elif num5 == num1 or num5 == num2 or num5 == num3 or num5 == num4:
-               num5 = random.randint(1,50)
-          elif num1 != num2 and num1 != num3 and num1 != num4 and num1 != num5 and num2 != num1 and num2 != num3 and num2 != num4 and num2 != num5 and num3 != num1 and num3 != num2 and num3 != num4 and num3 != num5 and num4 != num1 and num4 != num2 and num4 != num3 and num4 != num5:
-               break
-     return num1,num2,num3,num4,num5
-
-def sorteio_dificil():
-     num1 = random.randint(1,100)
-     num2 = random.randint(1,100)
-     num3 = random.randint(1,100)
-     num4 = random.randint(1,100)
-     num5 = random.randint(1,100)
-     while num1>0:
-          if num1 == num2 or num1 == num3 or num1 == num4 or num1 == num5:
-               num1 = random.randint(1,100)
-          elif num2 == num1 or num2 == num3 or num2 == num4 or num2 == num5:
-               num2 = random.randint(1,100)
-          elif num3 == num1 or num3 == num2 or num3 == num4 or num3 == num5:
-               num3 = random.randint(1,100)
-          elif num4 == num1 or num4 == num2 or num4 == num3 or num4 == num5:
-               num4 = random.randint(1,100)
-          elif num5 == num1 or num5 == num2 or num5 == num3 or num5 == num4:
-               num5 = random.randint(1,100)
-          elif num1 != num2 and num1 != num3 and num1 != num4 and num1 != num5 and num2 != num1 and num2 != num3 and num2 != num4 and num2 != num5 and num3 != num1 and num3 != num2 and num3 != num4 and num3 != num5 and num4 != num1 and num4 != num2 and num4 != num3 and num4 != num5:
-               break
-     return num1,num2,num3,num4,num5
 
 def nov():
      global jogar
@@ -83,78 +41,59 @@ def nov():
      else: 
           print('encerrando o programa')
 
+def respostas(Max):
+     resp1 = int(input('Primeiro numero'))
+     if resp1 > Max or resp1 < 1:
+          resp1 = int(input('Dê um numero entre 1 e', max))
+     resp2 = int(input('Segundo numero'))
+     if resp2 > Max or resp2 < 1:
+          resp2 = int(input('Dê um numero entre 1 e', max))
+     resp3 = int(input('Terceiro numero'))
+     if resp3 > Max or resp3 < 1:
+          resp3 = int(input('Dê um numero entre 1 e', max))
+     resp4 = int(input('Quarto numero'))
+     if resp4 > Max or resp4 < 1:
+          resp4 = int(input('Dê um numero entre 1 e', max))
+     resp5 = int(input('Quinto numero'))
+     if resp5 > Max or resp5 < 1:
+          resp5 = int(input('Dê um numero entre 1 e', max))
+     return resp1, resp2, resp3, resp4, resp5
 
 def tentativas():
      global pc, user
      if dificuldade == 1:
-          num1,num2,num3,num4,num5 = sorteio_facil()
+          num1,num2,num3,num4,num5 = sorteio(10)
           print('Decore os segintes numeros:')
           print("", num1, '\n', num2, '\n', num3, '\n', num4, '\n', num5)
           time.sleep(5)
           os.system('cls')
-
-          resp1 = int(input('Primeiro numero'))
-          if resp1 > 10 or resp1 < 1:
-               resp1 = int(input('Dê um numero entre 1 e 10'))
-          resp2 = int(input('Segundo numero'))
-          if resp2 > 10 or resp2 < 1:
-               resp2 = int(input('Dê um numero entre 1 e 10'))
-          resp3 = int(input('Terceiro numero'))
-          if resp3 > 10 or resp3 < 1:
-               resp3 = int(input('Dê um numero entre 1 e 10'))
-          resp4 = int(input('Quarto numero'))
-          if resp4 > 10 or resp4 < 1:
-               resp4 = int(input('Dê um numero entre 1 e 10'))
-          resp5 = int(input('Quinto numero'))
-          if resp5 > 10 or resp5 < 1:
-               resp5 = int(input('Dê um numero entre 1 e 10'))
+          resp1, resp2, resp3, resp4, resp5 = respostas(10)
 
      elif dificuldade == 2:
-          num1,num2,num3,num4,num5 = sorteio_medio()
+          num1,num2,num3,num4,num5 = sorteio(50)
           print('Decore os segintes numeros:')
           print("", num1, '\n', num2, '\n', num3, '\n', num4, '\n', num5)
           time.sleep(5)
           os.system('cls')
-
-          resp1 = int(input('Primeiro numero'))
-          if resp1 > 50 or resp1 < 1:
-               resp1 = int(input('Dê um numero entre 1 e 50'))
-          resp2 = int(input('Segundo numero'))
-          if resp2 > 50 or resp2 < 1:
-               resp2 = int(input('Dê um numero entre 1 e 50'))
-          resp3 = int(input('Terceiro numero'))
-          if resp3 > 50 or resp3 < 1:
-               resp3 = int(input('Dê um numero entre 1 e 50'))
-          resp4 = int(input('Quarto numero'))
-          if resp4 > 50 or resp4 < 1:
-               resp4 = int(input('Dê um numero entre 1 e 50'))
-          resp5 = int(input('Quinto numero'))
-          if resp5 > 50 or resp5 < 1:
-               resp5 = int(input('Dê um numero entre 1 e 50'))
+          resp1, resp2, resp3, resp4, resp5 = respostas(50)
 
      elif dificuldade == 3:
-          num1,num2,num3,num4,num5 = sorteio_dificil()
-          resp1 = int(input('Primeiro numero'))
-          if resp1 > 100 or resp1 < 1:
-               resp1 = int(input('Dê um numero entre 1 e 100'))
-          resp2 = int(input('Segundo numero'))
-          if resp2 > 100 or resp2 < 1:
-               resp2 = int(input('Dê um numero entre 1 e 100'))
-          resp3 = int(input('Terceiro numero'))
-          if resp3 > 100 or resp3 < 1:
-               resp3 = int(input('Dê um numero entre 1 e 100'))
-          resp4 = int(input('Quarto numero'))
-          if resp4 > 100 or resp4 < 1:
-               resp4 = int(input('Dê um numero entre 1 e 100'))
-          resp5 = int(input('Quinto numero'))
-          if resp5 > 100 or resp5 < 1:
-               resp5 = int(input('Dê um numero entre 1 e 100'))
-
+          num1,num2,num3,num4,num5 = sorteio(100)
+          print('Decore os segintes numeros:')
+          print("", num1, '\n', num2, '\n', num3, '\n', num4, '\n', num5)
+          time.sleep(5)
+          os.system('cls')
+          resp1, resp2, resp3, resp4, resp5 = respostas(100)
 
      if num1 == resp1 and num2 == resp2 and num3 == resp3 and num4 == resp4 and num5 == resp5:
           print('----------------------')
           print('Parabens Você ganhou')
-          user = user + 1 
+          if dificuldade == 1:
+               user = user + 1
+          elif dificuldade == 2:
+               user = user + 5
+          elif dificuldade == 3:
+               user = user + 7
           print('Placar geral')
           print('Pc:', pc, '   User:', user)
           time.sleep(0.3)
@@ -163,7 +102,12 @@ def tentativas():
           print('----------------------')
           print('O pc ganhou')
           print('O certo é', '\n', num1, "\n", num2, "\n", num3, "\n", num4, "\n", num5, "\n")
-          pc = pc + 1
+          if dificuldade == 1:
+               pc = pc + 7
+          elif dificuldade == 2:
+               pc = pc + 5
+          elif dificuldade == 3:
+               pc = pc + 1
           print('Placar geral')
           print('Pc', pc, '   User', user)
           time.sleep(0.3)
