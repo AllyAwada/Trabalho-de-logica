@@ -2,11 +2,13 @@ import time #Trabalhar com tempo
 import random #Sortear um numero aleatorio
 import os #Importar comandos de sistema
 
-dificuldade = int(input('Digite \n 1. fácil \n 2. médio \n 3. difícil \n'))
-jogar = input('Para começar digite "S"')
+
 
 pc = 0
 user = 0
+
+def manual():
+     print('Manual \n O jogo da memoria 2.0 tem o diferencial pois possue 3 dificudades \n 1 = fácil onde os numeros sorteados serão entre 1 e 10 e quando o usuario ganha ele ganha apenas 1 ponto e quando o pc ganha ele recebe 7 pontos \n 2 = média onde os numeros sorteados serão entre 1 e 50 e quando o usuario ganhar ele ganha 5 pontos e quando o pc ganha ele recebe 5 pontos \n 3 = difícil onde os numeros sorteados serão entre 1 e 100 e quando o usuario ganhar ele ganha 7 pontos e quando o pc ganha ele recebe apenas 1 ponto')
 
 def sorteio(Numeros):
      num1 = random.randint(1,Numeros)
@@ -35,8 +37,11 @@ def nov():
      global dificuldade
 
      jogar = input('Para jogar novamente digite "S"')
-     if jogar == 'S':
-          dificuldade = int(input('Digite \n 1. fácil \n 2. médio \n 3. difícil \n'))
+     if jogar == 'S' or jogar == 's':
+          man = input('Para ver o manual digite M caso o contrario precione enter')
+          if man == 'M' or man == 'm':
+               manual()
+          dificuldade = int(input('Escolha uma dificuldade \n 1. fácil \n 2. médio(Recomendado) \n 3. difícil \n'))
           tentativas()
      else: 
           print('encerrando o programa')
@@ -113,5 +118,12 @@ def tentativas():
           time.sleep(0.3)
           nov()
 
-while jogar == 'S':
+man = input('Para ver o manual digite M caso o contrario precione enter')
+if man == 'M' or man == 'm':
+     manual()
+
+dificuldade = int(input('Escolha uma dificuldade \n 1. fácil \n 2. médio(Recomendado) \n 3. difícil \n '))
+jogar = input('Para começar digite "S" \n ')
+
+while jogar == 'S' or jogar == 's':
      tentativas()
